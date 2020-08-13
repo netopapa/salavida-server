@@ -3,10 +3,10 @@ import knex from 'knex';
 export const db = knex({
     client: 'pg',
     connection: {
-        host: "localhost",
+        host: "salavida_database",
         user: "postgres",
         password: "root",
         database: "salavida",
-        port: 5439
+        port: 5432
     }
 });

@@ -1,0 +1,38 @@
+version: '3'
+
+services:
+
+  salavida_backend:
+    container_name: salavida_backend
+    build: '.'  # path do dockerfile
+    volumes:
+      - .:/app
+      - /app/node_modules
+    depends_on:
+      - salavida_database
+    networks:
+      - app-connect
+    ports:
+      - '3333:3333'
+
+  salavida_database:
+    container_name: salavida_database
+    image: postgres:11-alpine
+    restart: unless-stopped
+    volumes:
+      - salavida_database:/data
+    environment: 
+      POSTGRES_DB: salavida
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: root
+    networks:
+      - app-connect
+    ports:
+      - '5438:5432'
+
+volumes:
+  salavida_database:
+
+networks:
+  app-connect:
+      driver: bridge
