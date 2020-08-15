@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { db } from "../../database/connection";
+import { db_heroku as db } from "../../database/connection";
 import { BaseModel } from "../../models/base/base.model";
 
 
