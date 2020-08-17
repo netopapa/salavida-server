@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { db_heroku as db } from "../../database/connection";
+import { db } from "../../database/connection";
 import { BaseModel } from "../../models/base/base.model";
 
 
@@ -27,7 +27,7 @@ export default class CrudController<T extends BaseModel> {
     }
 
     public update = async (request: Request, response: Response) => {
-        
+
         const entity: T = request.body;
 
         if (!Object.hasOwnProperty.call(entity, 'id')) {

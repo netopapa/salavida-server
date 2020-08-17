@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "knex --knexfile knexfile.ts migrate:latest && NODE_ENV=local tsnd --transpile-only --ignore-watch node_modules --respawn src/server.ts",
+    "start:local": "knex --knexfile knexfile.ts migrate:latest && NODE_ENV=local tsnd --transpile-only --ignore-watch node_modules --respawn src/server.ts",
     "start:homolog": "knex --knexfile knexfile.ts migrate:latest && NODE_ENV=homolog tsnd --transpile-only --ignore-watch node_modules --respawn src/server.ts",
     "knex:migrate": "knex --knexfile knexfile.ts migrate:latest"
   },
