@@ -16,4 +16,4 @@ RUN npm install
 COPY ./ /app/
 
 EXPOSE 3333
-CMD [ "npm", "start" ]
+CMD [ "npm", "run", "start:homolog" ]

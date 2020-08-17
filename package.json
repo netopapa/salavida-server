@@ -4,14 +4,16 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "knex --knexfile knexfile.ts migrate:latest && tsnd --transpile-only --ignore-watch node_modules --respawn src/server.ts",
-    "knex-migrate": "knex --knexfile knexfile.ts migrate:latest"
+    "start": "knex --knexfile knexfile.ts migrate:latest && NODE_ENV=local tsnd --transpile-only --ignore-watch node_modules --respawn src/server.ts",
+    "start:homolog": "knex --knexfile knexfile.ts migrate:latest && NODE_ENV=homolog tsnd --transpile-only --ignore-watch node_modules --respawn src/server.ts",
+    "knex:migrate": "knex --knexfile knexfile.ts migrate:latest"
   },
   "keywords": [],
   "author": "",
   "license": "MIT",
   "devDependencies": {
     "@types/cors": "^2.8.7",
+    "dotenv": "^8.2.0",
     "ts-node-dev": "^1.0.0-pre.56",
     "typescript": "^3.9.7"
   },
