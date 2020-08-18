@@ -2,15 +2,17 @@ import * as dotenv from "dotenv";
 
 dotenv.config();
 let path;
+console.log(`Setting env to: ${process.env.NODE_ENV}`);
+
 switch (process.env.NODE_ENV) {
-    case "local":
-        path = `.env.local`;
+    case 'local':
+        path = '.env.local';
         break;
-    case "homolog":
-        path = `.env.homolog`;
+    case 'homolog':
+        path = '.env.homolog';
         break;
     default:
-        path = `.env.local`;
+        path = '.env.homolog';
 }
 dotenv.config({ path: path });
 
