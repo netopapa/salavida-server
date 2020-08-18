@@ -10,7 +10,7 @@ switch (process.env.NODE_ENV) {
         path = `.env.homolog`;
         break;
     default:
-        path = `.env.local`;
+        path = `.env.homolog`;
 }
 dotenv.config({ path: path });
 
