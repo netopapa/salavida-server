@@ -1,5 +1,5 @@
 import path from 'path';
-import { DB_HOST, DB_USER, DB_PASS, DB_NAME, DB_PORT, NODE_ENV } from './config';
+import { DB_HOST, DB_USER, DB_PASS, DB_NAME, DB_PORT } from './config';
 
 module.exports = {
     client: 'pg',
