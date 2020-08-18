@@ -4,9 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start:local": "NODE_ENV=local knex --knexfile knexfile.ts migrate:latest && NODE_ENV=local tsnd --transpile-only --ignore-watch node_modules --respawn src/server.ts",
-    "start:homolog": "NODE_ENV=homolog knex --knexfile knexfile.ts migrate:latest && NODE_ENV=homolog  tsnd --transpile-only --ignore-watch node_modules --respawn src/server.ts",
-    "knex:migrate": "knex --knexfile knexfile.ts migrate:latest"
+    "start:local": "npm run knex:migrate:local && NODE_ENV=local tsnd --transpile-only --ignore-watch node_modules --respawn src/server.ts",
+    "start:homolog": "npm run knex:migrate:homolog && NODE_ENV=homolog  tsnd --transpile-only --ignore-watch node_modules --respawn src/server.ts",
+    "knex:migrate": "knex --knexfile knexfile.ts migrate:latest",
+    "knex:migrate:local": "NODE_ENV=local knex --knexfile knexfile.ts migrate:latest",
+    "knex:migrate:homolog": "NODE_ENV=homolog knex --knexfile knexfile.ts migrate:latest"
   },
   "keywords": [],
   "author": "",

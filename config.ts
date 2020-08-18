@@ -2,7 +2,7 @@ import * as dotenv from "dotenv";
 
 dotenv.config();
 let path;
-console.log(`Setting env to: ${process.env.NODE_ENV}`);
+console.log(`Using ${process.env.NODE_ENV} database!`);
 
 switch (process.env.NODE_ENV) {
     case 'local':
