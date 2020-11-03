@@ -1,5 +1,6 @@
 export const TABLES = {
     PRODUCTS: 'products',
     CUSTOMERS: 'customers',
-    COMPANIES: 'companies'
+    COMPANIES: 'companies',
+    GUESTS: 'guests'
 }; 
